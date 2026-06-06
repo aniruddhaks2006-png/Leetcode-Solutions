@@ -1,26 +1,25 @@
-int min(int a, int b) {
-    return (a < b) ? a : b;
+int min(int a, int b){
+    if(a < b)
+        return a;
+    return b;
 }
 
 int maxArea(int* height, int heightSize) {
-
     int left = 0;
     int right = heightSize - 1;
+    int area = 0, maxarea = 0;
 
-    int max = 0;
+    while(left < right){
+        area = min(height[left], height[right]) * (right - left);
 
-    while (left < right) {
+        if(area > maxarea)
+            maxarea = area;
 
-        int area = min(height[left], height[right]) * (right - left);
-
-        if (area > max)
-            max = area;
-
-        if (height[left] < height[right])
-            left++;
-        else
+        if(height[left] > height[right])
             right--;
+        else
+            left++;
     }
 
-    return max;
+    return maxarea;
 }
