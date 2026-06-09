@@ -1,13 +1,9 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        if(nums==[]):
-            return 0
-        nums.sort()
-        d={}
+        count=0
         for i in nums:
-            if i not in d:
-                d[i]=1
-            else:
-                d[i]+=1
-        return max(d,key=d.get)
+            if count==0:
+                num=i
+            count+=1 if num==i else -1
+        return num
         
