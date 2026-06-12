@@ -15,9 +15,9 @@ jobs:
       - name: Sync Solves
         uses: joshcai/leetcode-sync@master
         with:
-          github-token: \${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           leetcode-csrf-token: ''
-          leetcode-session: \${{ secrets.LEETCODE_SESSION }}
+          leetcode-session: ${{ secrets.LEETCODE_SESSION }}
           leetcode-username: ${{ secrets.LEETCODE_USERNAME }}
           filter-duplicate-secs: 86400
           destination-folder: 'solutions'
