@@ -1,0 +1,7 @@
+select x,y,z,
+Case when
+x+y>z and x+z>y and y+z>x
+then 'Yes'
+else 'No'
+end as Triangle
+from Triangle
