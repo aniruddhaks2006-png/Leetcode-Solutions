@@ -1,0 +1,5 @@
+class Solution {
+public:
+    int largestInteger(int n, int s) {
+        if (s > 9 * n) return -1; int ans=0;  while (n--) {   int d = min(9,s);    ans=ans*10+d;      s-= d;      } return ans;   }
+};
