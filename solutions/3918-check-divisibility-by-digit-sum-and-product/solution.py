@@ -1,11 +1,13 @@
 class Solution:
-    def checkDivisibility(self, num: int) -> bool:
-        n=num
-        sum=0
-        product=1
-        while(num!=0):
-            sum+=num%10
-            product*=num%10
-            num//=10
-        return (n%(sum+product)==0)
-        
+    def checkDivisibility(self, n: int) -> bool:
+        prod=1
+        sumi=0
+        x=n
+        while n!=0:
+            y=n%10
+            sumi+=y
+            prod*=y
+            n//=10
+        if x%(sumi+prod)!=0:
+            return False
+        return True
